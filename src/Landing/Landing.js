@@ -83,9 +83,9 @@ const TitleContent = () => (
       fill='horizontal'
       justify='around'
     >
-      imagenperrona.jpg
+      imagen
     </Box>
-    <Box gridArea='title' justify='center' align='end'>
+    <Box gridArea='title' margin={{horizontal:'medium'}} justify='center' align='end'>
       <Heading color='white' level='4' textAlign='end'>
         Apoyos por contingencia covid-19
       </Heading>
@@ -121,7 +121,7 @@ const MainContent = ({ handleClick }) => {
         }}
       >
         {Apoyos.map((el, i) => (
-          <_Card title={el.title} description={el.description} key={i} />
+          <_Card title={el.title} description={el.description} key={i} handleClick={handleClick} />
         ))}
       </Grid>
     </Grid>
@@ -256,9 +256,9 @@ const FooterContent = () => {
   );
 };
 
-const _Card = ({ title, description, status = true }) => {
+const _Card = ({ title, description, status = true ,handleClick }) => {
   const footer = (
-    <Button label='Seleccionar' className={'unselectbtn p-button-raised'} />
+    <Button label='Seleccionar' className={'unselectbtn p-button-raised'} onClick={handleClick}/>
   );
   return (
     <Card
@@ -273,23 +273,28 @@ const _Card = ({ title, description, status = true }) => {
 
 const Apoyos = [
   {
-    title: 'Apoyo a micro y pequeñas empresas',
+    title: 'APOYO ALIMENTARIO POR EMERGENCIA SANITARIA',
     description:
-      'Brindar apoyo económico a los trabajadores cuyos ingresos se han visto afectados debido a la contingencia.',
+      'Es un  programa gubernamental que tiene como finalidad brindar apoyo alimentario en esta contingencia sanitaria hasta la puerta de tu casa, porque TU BIENESTAR ES NUESTRA PRIORIDAD.Este programa tiene como objetivo primordial hacer llegar una despensa por familia, a aquellas personas que se encuentren en una situación vulnerable.El apoyo es GRATUITO y de acceso público.',
   },
-  {
-    title: 'Apoyo a productores de maíz',
-    description:
-      'Los y las productoras que se dedican a la producción de maíz que han sido afectados por la actual pandemia de COVID-19 tienen el apoyo del Gobierno del Estado.',
-  },
-  {
-    title: 'Apoyo a personas con autoempleo o empleos no formales',
-    description:
-      'Brindar apoyo económico a los trabajadores cuyos ingresos se han visto afectados debido a la contingencia.',
-  },
-  {
-    title: 'Apoyo a mujeres',
-    description:
-      'Las trabajadoras del hogar representan un sector económico vulnerable por lo cual también se otorgará un apoyo para amas de casa afectadas por la contingencia de COVID-19.',
-  },
+  // {
+  //   title: 'Apoyo a micro y pequeñas empresas',
+  //   description:
+  //     'Brindar apoyo económico a los trabajadores cuyos ingresos se han visto afectados debido a la contingencia.',
+  // },
+  // {
+  //   title: 'Apoyo a productores de maíz',
+  //   description:
+  //     'Los y las productoras que se dedican a la producción de maíz que han sido afectados por la actual pandemia de COVID-19 tienen el apoyo del Gobierno del Estado.',
+  // },
+  // {
+  //   title: 'Apoyo a personas con autoempleo o empleos no formales',
+  //   description:
+  //     'Brindar apoyo económico a los trabajadores cuyos ingresos se han visto afectados debido a la contingencia.',
+  // },
+  // {
+  //   title: 'Apoyo a mujeres',
+  //   description:
+  //     'Las trabajadoras del hogar representan un sector económico vulnerable por lo cual también se otorgará un apoyo para amas de casa afectadas por la contingencia de COVID-19.',
+  // },
 ];
