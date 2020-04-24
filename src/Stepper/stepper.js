@@ -88,7 +88,7 @@ class Stepper extends React.Component {
       visible: false,
       validMail: false,
       selectplan: '',
-      step: 2,
+      step: 0,
       noValid: {
         step0: {
           pName: true,
